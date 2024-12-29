@@ -1,0 +1,18 @@
+{
+  "schema_version": "v1",
+  "name_for_human": "Funnel Bot",
+  "name_for_model": "funnel_bot",
+  "description_for_human": "Helps users create funnels with optimized copy and design ideas.",
+  "description_for_model": "Provides funnel page suggestions, including squeeze pages, sales pages, order pages, and thank-you pages.",
+  "auth": {
+    "type": "none"
+  },
+  "api": {
+    "type": "openapi",
+    "url": "https://funnel-bot.onrender.com/.well-known/openapi.json",
+    "is_user_authenticated": false
+  },
+  "logo_url": "https://d1yei2z3i6k35z.cloudfront.net/3126853/6671b718003c5_funnelacademylogo-2.png",
+  "contact_email": "info@thefunnelacademy.com",
+  "legal_info_url": "https://www.thefunnelacademy.com/license"
+}
