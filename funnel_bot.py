@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, send_from_directory
 import openai
 import os
 
@@ -47,6 +47,16 @@ def generate_content():
 
     except Exception as e:
         return jsonify({"error": str(e)}), 500
+
+# Route to serve ai-plugin.json
+@app.route('/.well-known/ai-plugin.json')
+def serve_ai_plugin():
+    return send_from_directory('.', 'ai-plugin.json', mimetype='application/json')
+
+# Route to serve openapi.json
+@app.route('/.well-known/openapi.json')
+def serve_openapi():
+    return send_from_directory('.', 'openapi.json', mimetype='application/json')
 
 if __name__ == '__main__':
     app.run(debug=True)
