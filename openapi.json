@@ -1,0 +1,60 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Funnel Bot API",
+    "version": "1.0.0",
+    "description": "API for generating funnel page content."
+  },
+  "paths": {
+    "/generate_content": {
+      "post": {
+        "summary": "Generate Funnel Content",
+        "operationId": "generateContent",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "page_type": {
+                    "type": "string",
+                    "description": "Type of funnel page (e.g., squeeze, sales, order, thank-you)."
+                  },
+                  "goal": {
+                    "type": "string",
+                    "description": "Goal of the funnel."
+                  },
+                  "product": {
+                    "type": "string",
+                    "description": "Product or service being promoted."
+                  },
+                  "audience": {
+                    "type": "string",
+                    "description": "Target audience for the funnel."
+                  }
+                },
+                "required": ["page_type", "goal", "product", "audience"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "page_type": { "type": "string" },
+                    "content": { "type": "string" }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
